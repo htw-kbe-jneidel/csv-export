@@ -2,7 +2,7 @@
 
 ## Queues
 
-### initiateExport
+### initiateCsvExport
 
 Start an export of all data in the system and save it locally as a CSV.
 
