@@ -1,4 +1,6 @@
-# distance-calculator
+# csv-export
+
+Export the business data as CSV. Available through message queue RPC calls.
 
 ## Queues
 
