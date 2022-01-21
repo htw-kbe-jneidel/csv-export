@@ -1,0 +1,47 @@
+{
+  "name": "distance-calculator",
+  "repository": "htw-kbe-jneidel/distance-calculator",
+  "version": "0.0.1",
+  "author": {
+    "name": "Jonathan Neidel",
+    "email": "git@jneidel.com",
+    "url": "https://jneidel.com"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "start": "nodemon dist/app.js --ignore src/ --ignore test/ --trace-sync-io",
+    "test": "jest --coverage",
+    "build": "npm run build-ts",
+    "build-ts": "tsc",
+    "build-webpack": "webpack",
+    "watch": "concurrently -k -n \"🔨,🚀\" \"npm run watch-build\" \"npm run watch-test\" --prefix name",
+    "watch-build": "tsc -w",
+    "watch-test": "jest --watch",
+    "start-prod": "concurrently -n \"distance-calculator\" \"node dist/app.js\" --prefix name",
+    "lint": "eslint --fix -c ~/.config/eslint/eslintrc-ts --ext .ts --parser-options \"{ 'ecmaVersion': 10, 'ecmaFeatures': { 'impliedStrict': true }, project: ./tsconfig.json }\" src"
+  },
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "axios": "^0.25.0"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.9",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/**/*.test.ts"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    }
+  }
+}
