@@ -19,7 +19,7 @@
     "watch": "concurrently -k -n \"🔨,🚀\" \"npm run watch-build\" \"npm run watch-test\" --prefix name",
     "watch-build": "tsc -w",
     "watch-test": "jest --watch",
-    "start-prod": "concurrently -n \"distance-calculator\" \"node dist/app.js\" --prefix name",
+    "start-prod": "node dist/app.js",
     "lint": "eslint --fix -c ~/.config/eslint/eslintrc-ts --ext .ts --parser-options \"{ 'ecmaVersion': 10, 'ecmaFeatures': { 'impliedStrict': true }, project: ./tsconfig.json }\" src"
   },
   "dependencies": {
